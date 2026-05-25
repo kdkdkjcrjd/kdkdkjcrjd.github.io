@@ -1,1 +1,175 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 2026 | Neo-Bento Portal</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --surface-1: #121318;
+            --surface-2: #1c1e24;
+            --accent-purple: #b08dff;
+            --accent-cyan: #7ce3ff;
+            --accent-pink: #ff8df6;
+            --text-main: #ffffff;
+            --text-muted: #a0a2b0;
+            --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 120px);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .bento-card {
+            background-color: var(--surface-1);
+            border: 1px solid var(--surface-2);
+            border-radius: 24px;
+            padding: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 30px rgba(176, 141, 255, 0.15);
+        }
+
+        /* Span configurations for the bento layout */
+        .card-large { grid-column: 1 / 4; grid-row: 1 / 4; }
+        .card-header { grid-column: 4 / 7; grid-row: 1 / 2; }
+        .card-stats { grid-column: 4 / 5; grid-row: 2 / 3; }
+        .card-stats2 { grid-column: 5 / 7; grid-row: 2 / 3; }
+        .card-bottom { grid-column: 4 / 7; grid-row: 3 / 5; }
+
+        /* Card Content Styling */
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.05em; line-height: 1.1; }
+        h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-main); }
+        p { color: var(--text-muted); font-size: 1rem; line-height: 1.5; margin-bottom: 1.5rem; }
+
+        /* Card 1: Large Code & Canvas */
+        .code-box {
+            background-color: var(--surface-2);
+            padding: 1.5rem;
+            border-radius: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            height: calc(100% - 120px);
+            overflow: auto;
+            border: 1px solid var(--surface-2);
+        }
+
+        /* Card 2: Header */
+        .card-header { background: linear-gradient(135deg, var(--surface-1), var(--surface-2)); }
+        
+        /* Card 3: Stats */
+        .stat-number { font-size: 2rem; font-weight: bold; color: var(--accent-pink); }
+
+        /* Card 4: Action Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-purple);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-cyan);
+            transform: scale(1.02);
+        }
+
+        /* Responsive Layout for smaller screens */
+        @media (max-width: 900px) {
+            .bento-container {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+            .bento-card {
+                width: 100%;
+                grid-column: auto;
+                grid-row: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bento-container">
+        <!-- Large Card: Canvas / Code View -->
+        <div class="bento-card card-large">
+            <h2>Canvas & Vibe Code</h2>
+            <p>Modern layouts lean into structural transparency and minimalist architecture.</p>
+            <div class="code-box">
+<span style="color:var(--text-main)">function</span> initBento() {<br>
+  &nbsp;&nbsp;<span style="color:var(--text-main)">const</span> vibe = '2026';<br>
+  &nbsp;&nbsp;<span style="color:var(--text-main)">return</span> {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;grid: 'bento',<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;motion: 'micro-interactions',<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;theme: 'dark-mode'<br>
+  &nbsp;&nbsp;};<br>
+}<br>
+console.log(initBento());
+            </div>
+        </div>
+
+        <!-- Header Card -->
+        <div class="bento-card card-header">
+            <h1>Dynamic View</h1>
+            <p style="color: var(--accent-purple);">Powered by the Gemini 2026 ecosystem.</p>
+        </div>
+
+        <!-- Stat Card 1 -->
+        <div class="bento-card card-stats">
+            <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">2026 Vibe Index</p>
+            <div class="stat-number">10.0</div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="bento-card card-stats2">
+            <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">Adaptive Layouts</p>
+            <div class="stat-number">100% Fluid</div>
+        </div>
+
+        <!-- Action Card -->
+        <div class="bento-card card-bottom">
+            <h2>Activate Your Vision</h2>
+            <p>Build and launch fully rendered AI components with one click.</p>
+            <button class="btn" onclick="alert('Bento layout initialized!')">Activate Now</button>
+        </div>
+    </div>
+
+</body>
+</html>
+ 
